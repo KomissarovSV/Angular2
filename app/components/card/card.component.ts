@@ -1,20 +1,21 @@
 import {Component, OnInit} from '@angular/core'
-import {HttpService} from "../../services/http/http.service";
 import {Response} from "@angular/http";
+import {CardService} from "../../services/card/card.service";
+import {Oic} from "./oic";
 
 @Component({
     moduleId:module.id,
     selector:'card',
     templateUrl:'card.component.html',
-    providers:[HttpService]
+    providers:[CardService]
 })
 export class Card implements  OnInit{
 
-    date;
+    data:Oic[];
 
-    constructor(private httpService: HttpService){}
+    constructor(private cardService: CardService){}
 
     ngOnInit(){
-        this.date = this.httpService.getData().subscribe((data: Response) => this.data=data.json());
+        this.cardService.getAllOic().subscribe((data: Response) => this.data=data.json());
     }
 }

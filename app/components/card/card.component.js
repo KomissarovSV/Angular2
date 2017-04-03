@@ -9,14 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var http_service_1 = require("../../services/http/http.service");
+var card_service_1 = require("../../services/card/card.service");
 var Card = (function () {
-    function Card(httpService) {
-        this.httpService = httpService;
+    function Card(cardService) {
+        this.cardService = cardService;
     }
     Card.prototype.ngOnInit = function () {
         var _this = this;
-        this.date = this.httpService.getData().subscribe(function (data) { return _this.data = data.json(); });
+        this.cardService.getAllOic().subscribe(function (data) { return _this.data = data.json(); });
     };
     return Card;
 }());
@@ -25,9 +25,9 @@ Card = __decorate([
         moduleId: module.id,
         selector: 'card',
         templateUrl: 'card.component.html',
-        providers: [http_service_1.HttpService]
+        providers: [card_service_1.CardService]
     }),
-    __metadata("design:paramtypes", [http_service_1.HttpService])
+    __metadata("design:paramtypes", [card_service_1.CardService])
 ], Card);
 exports.Card = Card;
 //# sourceMappingURL=card.component.js.map

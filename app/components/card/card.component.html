@@ -1,5 +1,10 @@
-<ul>
-    <li *ngFor="let item of data">
-        {{item["фамилия"]}}
-    </li>
-</ul>
+<table class="table table-hover">
+    <tr *ngFor="let oic of data">
+        <td>{{oic.number}}</td>
+        <td>{{oic.name}}</td>
+        <td>{{oic.docNum}}</td>
+        <td>{{oic.priorityDate}}</td>
+        <td>{{oic.deliveryDate}}</td>
+        <td>{{oic.authors}}</td>
+    </tr>
+</table>
