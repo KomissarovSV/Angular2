@@ -15,8 +15,47 @@ var Card = (function () {
         this.cardService = cardService;
     }
     Card.prototype.ngOnInit = function () {
+        this.clickAllOic();
+    };
+    Card.prototype.clickAllOic = function () {
         var _this = this;
-        this.cardService.getAllOic().subscribe(function (data) { return _this.data = data.json(); });
+        this.cardService.getAllOic().subscribe(function (data) { return _this.oicList = data.json(); });
+    };
+    Card.prototype.clickBalanceOic = function () {
+        var _this = this;
+        this.cardService.getOicByBalance().subscribe(function (data) { return _this.oicList = data.json(); });
+    };
+    Card.prototype.clickInActiveOic = function () {
+        var _this = this;
+        this.cardService.getOicInActive().subscribe(function (data) { return _this.oicList = data.json(); });
+    };
+    Card.prototype.clickInnavationsOic = function () {
+        var _this = this;
+        this.cardService.getOicByInnovations().subscribe(function (data) { return _this.oicList = data.json(); });
+    };
+    Card.prototype.clickProgramsOic = function () {
+        var _this = this;
+        this.cardService.getOicByPrograms().subscribe(function (data) { return _this.oicList = data.json(); });
+    };
+    Card.prototype.clickKnowHowOic = function () {
+        var _this = this;
+        this.cardService.getOicByKnowHow().subscribe(function (data) { return _this.oicList = data.json(); });
+    };
+    Card.prototype.clickFondsOic = function () {
+        var _this = this;
+        this.cardService.getOicByFonds().subscribe(function (data) { return _this.oicList = data.json(); });
+    };
+    Card.prototype.clickContractsOic = function () {
+        var _this = this;
+        this.cardService.getOicByContracts().subscribe(function (data) { return _this.oicList = data.json(); });
+    };
+    Card.prototype.clickRnDOic = function () {
+        var _this = this;
+        this.cardService.getOicByRnD().subscribe(function (data) { return _this.oicList = data.json(); });
+    };
+    Card.prototype.clickDepartmentsOic = function () {
+        var _this = this;
+        this.cardService.getOicByDepartments().subscribe(function (data) { return _this.oicList = data.json(); });
     };
     return Card;
 }());

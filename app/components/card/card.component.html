@@ -1,10 +1,57 @@
-<table class="table table-hover">
-    <tr *ngFor="let oic of data">
-        <td>{{oic.number}}</td>
-        <td>{{oic.name}}</td>
-        <td>{{oic.docNum}}</td>
-        <td>{{oic.priorityDate}}</td>
-        <td>{{oic.deliveryDate}}</td>
-        <td>{{oic.authors}}</td>
-    </tr>
-</table>
+<div class="row">
+    <div id="left_panel" class="col-md-2">
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a href="#oic" data-toggle="tab">ОИС</a></li>
+            <li><a href="#apply" data-toggle="tab">Заявки</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="oic">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active" data-toggle="tab" (click)="clickAllOic()"><a>Все действующие ОИС</a></li>
+                    <li data-toggle="tab" (click)="clickInnavationsOic()"><a>Изобретения и модели</a></li>
+                    <li data-toggle="tab" (click)="clickProgramsOic()"><a>Программы и БД</a></li>
+                    <li data-toggle="tab" (click)="clickKnowHowOic()"><a>Только ноу-хау</a></li>
+                    <li data-toggle="tab" (click)="clickBalanceOic()"><a>На балансе</a></li>
+                    <li data-toggle="tab" (click)="clickFondsOic()"><a>В уставных фондах</a></li>
+                    <li data-toggle="tab" (click)="clickContractsOic()"><a>В договорах</a></li>
+                    <li data-toggle="tab" (click)="clickRnDOic()"><a>Связанные с НИР</a></li>
+                    <li data-toggle="tab" (click)="clickDepartmentsOic()"><a>По подразделениям</a></li>
+                    <li data-toggle="tab" (click)="clickInActiveOic()"><a>Недуйствующие</a></li>
+                </ul>
+            </div>
+            <div class="tab-pane fade" id="apply">данные2</div>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Наименование ОИС</th>
+                        <th>№ Документа</th>
+                        <th>Тип</th>
+                        <th>Дата приоритета</th>
+                        <th>Дата выдачи</th>
+                        <th>Авторы</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let oic of oicList">
+                        <td>{{oic.number}}</td>
+                        <td>{{oic.name}}</td>
+                        <td>{{oic.docNum}}</td>
+                        <td>{{oic.type}}</td>
+                        <td>{{oic.priorityDate}}</td>
+                        <td>{{oic.deliveryDate}}</td>
+                        <td>{{oic.authors}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
