@@ -11,6 +11,8 @@ var app_component_1 = require("./app.component");
 var router_1 = require("@angular/router");
 var card_component_1 = require("./components/card/card.component");
 var http_1 = require("@angular/http");
+var common_table_component_1 = require("./components/card/common-table/common-table.component");
+var department_table_component_1 = require("./components/card/department-table/department-table.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23,7 +25,7 @@ AppModule = __decorate([
             http_1.HttpModule,
             router_1.RouterModule.forRoot([])
         ],
-        declarations: [app_component_1.AppComponent, card_component_1.Card],
+        declarations: [app_component_1.AppComponent, card_component_1.Card, common_table_component_1.CommonTable, department_table_component_1.DepartmentTable],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

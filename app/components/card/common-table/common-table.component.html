@@ -1,0 +1,24 @@
+<table class="table table-hover table-bordered">
+    <thead>
+    <tr>
+        <th>№</th>
+        <th>Наименование ОИС</th>
+        <th>№ Документа</th>
+        <th>Тип</th>
+        <th>Дата приоритета</th>
+        <th>Дата выдачи</th>
+        <th>Авторы</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let oic of oicList">
+        <td>{{oic.number}}</td>
+        <td>{{oic.name}}</td>
+        <td>{{oic.docNum}}</td>
+        <td>{{oic.type}}</td>
+        <td>{{oic.priorityDate}}</td>
+        <td>{{oic.deliveryDate}}</td>
+        <td>{{oic.authors}}</td>
+    </tr>
+    </tbody>
+</table>

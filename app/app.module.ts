@@ -4,6 +4,8 @@ import { AppComponent } from './app.component'
 import { RouterModule } from "@angular/router"
 import { Card } from './components/card/card.component'
 import { HttpModule } from '@angular/http'
+import {CommonTable} from "./components/card/common-table/common-table.component";
+import {DepartmentTable} from "./components/card/department-table/department-table.component";
 
 
 @NgModule({
@@ -13,7 +15,7 @@ import { HttpModule } from '@angular/http'
         RouterModule.forRoot([
 
         ])],
-    declarations:[AppComponent,Card],
+    declarations:[AppComponent,Card,CommonTable,DepartmentTable],
     bootstrap:[AppComponent]
 })
 export class AppModule{

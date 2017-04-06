@@ -6,4 +6,5 @@ export class Oic {
     priorityDate:Date;
     deliveryDate:Date;
     authors:string;
+    department:string
 }
