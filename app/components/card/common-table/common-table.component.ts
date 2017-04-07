@@ -8,7 +8,7 @@ import {Oic} from "../oic";
     templateUrl:'common-table.component.html',
     providers:[CardService]
 })
-export class CommonTable implements  OnInit{
+export class CommonTable{
 
     @Input()
     oicList:Oic[];

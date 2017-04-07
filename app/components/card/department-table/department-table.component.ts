@@ -8,7 +8,7 @@ import {Oic} from "../oic";
     templateUrl:'department-table.component.html',
     providers:[CardService]
 })
-export class DepartmentTable implements  OnInit{s
+export class DepartmentTable{
 
     @Input()
     oicList:Oic[];
