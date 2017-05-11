@@ -11,7 +11,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let oic of oicList">
+    <tr *ngFor="let oic of oicList" data-toggle="modal" data-target="#oicModal">
         <td>{{oic.number}}</td>
         <td>{{oic.name}}</td>
         <td>{{oic.docNum}}</td>
@@ -19,6 +19,7 @@
         <td>{{oic.deliveryDate}}</td>
         <td>{{oic.department}}</td>
         <td>{{oic.authors}}</td>
+
     </tr>
     </tbody>
 </table>
