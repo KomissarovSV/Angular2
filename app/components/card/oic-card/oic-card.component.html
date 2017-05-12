@@ -10,15 +10,21 @@
                 <div class="row">
                     <div class="col-md-7">
                         <div class="form-inline form-group">
-                            <label class="control-label">Внутренний номер:</label>
+                            <label>Внутренний номер:</label>
                             <p class="form-control-static">Какой-то Номер</p>
                         </div>
-                        <div class="form-group">
-                            <label for="oicName">Наименование ОИС</label>
-                            <textarea class="form-control" id="oicName"></textarea>
+                        <div>
+                            <label for="current">Действующий</label>
+                            <input type="checkbox" id="current">
                         </div>
                         <div class="row">
-                            <h6 class="col-md-3">Тип ОИС</h6>
+                            <div class="form-group no-padding-right col-md-12">
+                                <label for="oicName">Наименование ОИС</label>
+                                <textarea class="form-control" id="oicName" rows="4"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h5 class="col-md-3">Тип ОИС</h5>
                             <div class="col-md-3">
                                 <div class="row">
                                     <select class="form-control input-sm">
@@ -27,7 +33,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <h6 class="col-md-4 nopadding">Тип основания</h6>
+                            <h5 class="col-md-4">Тип основания</h5>
                             <div class="col-md-2">
                                 <div class="row">
                                     <select class="form-control input-sm">
@@ -38,28 +44,273 @@
                             </div>
                         </div>
                         <div class="row">
-                            <h6 class="col-md-3">Дата приоритета</h6>
+                            <h5 class="col-md-3">Дата приоритета</h5>
                             <div class="col-md-3">
                                 <div class="row">
-                                    <input type="date" class="form-control input-sm col-md-3 nopadding">
+                                    <input type="date" class="form-control input-sm col-md-3">
                                 </div>
                             </div>
-                            <h6 class="col-md-4 nopadding">Номер охранного документа</h6>
+                            <h5 class="col-md-4">Номер охранного документа</h5>
                             <div class="col-md-2">
                                 <div class="row">
                                     <input type="text" class="form-control input-sm col-md-2">
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <h5 class="col-md-3">Дата выдачи</h5>
+                            <div class="col-md-3">
+                                <div class="row">
+                                    <input type="date" class="form-control input-sm col-md-3">
+                                </div>
+                            </div>
+                            <h5 class="col-md-4">Номер бюллетеня</h5>
+                            <div class="col-md-2">
+                                <div class="row">
+                                    <input type="text" class="form-control input-sm col-md-2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h5 class="col-md-3">Дата получения</h5>
+                            <div class="col-md-3">
+                                <div class="row">
+                                    <input type="date" class="form-control input-sm col-md-3">
+                                </div>
+                            </div>
+                            <h5 class="col-md-4">Внутренний номер заявки</h5>
+                            <div class="col-md-2">
+                                <div class="row">
+                                    <input type="number" class="form-control input-sm col-md-2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h5 class="col-md-3">Срок действия</h5>
+                            <div class="col-md-3">
+                                <div class="row">
+                                    <input type="date" class="form-control input-sm col-md-3">
+                                </div>
+                            </div>
+                            <h5 class="col-md-4">Номер внутреннего дела</h5>
+                            <div class="col-md-2">
+                                <div class="row">
+                                    <input type="text" class="form-control input-sm col-md-2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group no-padding-right col-md-6">
+                                <label for="noteBalance">Примечания по постановке на баланс</label>
+                                <textarea class="form-control" id="noteBalance" rows="5"></textarea>
+                            </div>
+                            <div class="form-group no-padding-right col-md-6">
+                                <label for="noteRight">Примечения по передаче прав</label>
+                                <textarea class="form-control" id="noteRight" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group no-padding-right col-md-6">
+                                <label for="contacts">Контактные сведенья</label>
+                                <textarea class="form-control" id="contacts" rows="5"></textarea>
+                            </div>
+                            <div class="form-group no-padding-right col-md-6">
+                                <label for="generalNotes">Общие примечания</label>
+                                <textarea class="form-control" id="generalNotes" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="authors">Авторы</label>
+                                <textarea class="form-control" id="authors" rows="3"></textarea>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-5">
-
+                        <div class="row margin-btn">
+                            <label class="col-md-12">Авторы, внесённые в реестр сотрудников</label>
+                            <div class="col-md-9 no-padding-right">
+                                <div class="table-fixed border">
+                                    <table class="table table-hover table-condensed">
+                                        <thead>
+                                        <tr>
+                                            <th>Фио</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr><td>Комиссаров С.В.</td></tr>
+                                        <tr><td>Комиссаров С.В.</td></tr>
+                                        <tr><td>Комиссаров С.В.</td></tr>
+                                        <tr><td>Комиссаров С.В.</td></tr>
+                                        <tr><td>Комиссаров С.В.</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-primary">Изменить</button>
+                            </div>
+                        </div>
+                        <div class="row margin-btn">
+                            <label class="col-md-12">Подразделения</label>
+                            <div class="col-md-9 no-padding-right">
+                                <div class="table-fixed border">
+                                    <table class="table table-hover table-condensed">
+                                        <thead>
+                                        <tr>
+                                            <th>Наименование</th>
+                                            <th>Сокр-е</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>Подразделение 1</td>
+                                            <td>ВТ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Подразделение 2</td>
+                                            <td>ВТ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Подразделение 3</td>
+                                            <td>ВТ</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-primary">Изменить</button>
+                            </div>
+                        </div>
+                        <div class="row margin-btn">
+                            <label class="col-md-12">Ссылки на договоры</label>
+                            <div class="col-md-9 no-padding-right">
+                                <div class="table-fixed border">
+                                    <table class="table table-hover table-condensed">
+                                        <thead>
+                                        <tr>
+                                            <th>Наименование</th>
+                                            <th>Шифр</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>Договор 1</td>
+                                            <td>АБС</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Договор 2</td>
+                                            <td>АБС</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Договор 3</td>
+                                            <td>АБС</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-primary">Изменить</button>
+                            </div>
+                        </div>
+                        <div class="row margin-btn">
+                            <label class="col-md-12">Ссылки на НИР</label>
+                            <div class="col-md-9 no-padding-right">
+                                <div class="table-fixed border">
+                                    <table class="table table-hover table-condensed">
+                                        <thead>
+                                        <tr>
+                                            <th>Наименование</th>
+                                            <th>Шифр</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>Нир 1</td>
+                                            <td>АБС</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Нир 2</td>
+                                            <td>АБС</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Нир 3</td>
+                                            <td>АБС</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-primary">Изменить</button>
+                            </div>
+                        </div>
+                        <div class="row margin-btn">
+                            <label class="col-md-12">Ссылки на ГРАНТИ</label>
+                            <div class="col-md-9 no-padding-right">
+                                <div class="table-fixed border">
+                                    <table class="table table-hover table-condensed">
+                                        <thead>
+                                        <tr>
+                                            <th>Наименование</th>
+                                            <th>Шифр</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>ГРАНТИ 1</td>
+                                            <td>АБС</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ГРАНТИ 2</td>
+                                            <td>АБС</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ГРАНТИ 3</td>
+                                            <td>АБС</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-primary">Изменить</button>
+                            </div>
+                        </div>
+                        <div class="row margin-btn">
+                            <label class="col-md-12">Ссылки на ключевые слова</label>
+                            <div class="col-md-9 no-padding-right">
+                                <div class="table-fixed border">
+                                    <table class="table table-hover table-condensed">
+                                        <thead>
+                                        <tr>
+                                            <th>Фио</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr><td>Ссылки 1</td></tr>
+                                        <tr><td>Ссылки 2</td></tr>
+                                        <tr><td>Ссылки 3</td></tr>
+                                        <tr><td>Ссылки 4</td></tr>
+                                        <tr><td>Ссылки 5</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-primary">Изменить</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-success">Сохранить данные</button>
+                <button type="button" class="btn btn-warning">Отменить изменения</button>
+                <button type="button" class="btn btn-primary">Отчёт по карточке</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Выход</button>
             </div>
         </div>
     </div>
