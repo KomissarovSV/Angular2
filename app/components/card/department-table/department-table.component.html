@@ -11,7 +11,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let oic of oicList" data-toggle="modal" data-target="#oicModal">
+    <tr *ngFor="let oic of oicList" data-toggle="modal" data-target="#oicModal" (click)="rowClick(oic.number)">
         <td>{{oic.number}}</td>
         <td>{{oic.name}}</td>
         <td>{{oic.docNum}}</td>

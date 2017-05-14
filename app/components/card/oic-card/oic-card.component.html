@@ -11,122 +11,172 @@
                     <div class="col-md-7">
                         <div class="form-inline form-group">
                             <label>Внутренний номер:</label>
-                            <p class="form-control-static">Какой-то Номер</p>
+                            <p class="form-control-static">{{cardEdit.number}}</p>
                         </div>
                         <div>
                             <label for="current">Действующий</label>
-                            <input type="checkbox" id="current">
+                            <input type="checkbox" id="current" [(ngModel)]="cardEdit.active">
                         </div>
                         <div class="row">
                             <div class="form-group no-padding-right col-md-12">
                                 <label for="oicName">Наименование ОИС</label>
-                                <textarea class="form-control" id="oicName" rows="4"></textarea>
+                                <textarea class="form-control" id="oicName" rows="3" [(ngModel)]="cardEdit.name"></textarea>
                             </div>
                         </div>
-                        <div class="row">
-                            <h5 class="col-md-3">Тип ОИС</h5>
+                        <div class="row space">
+                            <label class="col-md-3">Тип ОИС</label>
                             <div class="col-md-3">
                                 <div class="row">
-                                    <select class="form-control input-sm">
-                                        <option>1</option>
-                                        <option>2</option>
+                                    <select [(ngModel)]="cardEdit.typeOic" class="form-control input-sm">
+                                        <option *ngFor="let type of oicTypes" value="{{type.typeId}}">{{type.shortName}}</option>
                                     </select>
                                 </div>
                             </div>
-                            <h5 class="col-md-4">Тип основания</h5>
+                            <label class="col-md-4">Тип основания</label>
                             <div class="col-md-2">
                                 <div class="row">
-                                    <select class="form-control input-sm">
-                                        <option>1</option>
-                                        <option>2</option>
+                                    <select [(ngModel)]="cardEdit.typeOsnov" class="form-control input-sm">
+                                        <option *ngFor="let type of typesOsnov" value="{{type.id}}">{{type.name}}</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <h5 class="col-md-3">Дата приоритета</h5>
+                        <div class="row space">
+                            <label class="col-md-3">Дата приоритета</label>
                             <div class="col-md-3">
                                 <div class="row">
-                                    <input type="date" class="form-control input-sm col-md-3">
+                                    <input type="date" class="form-control input-sm col-md-3" [(ngModel)]="cardEdit.priorityDate">
                                 </div>
                             </div>
-                            <h5 class="col-md-4">Номер охранного документа</h5>
+                            <label class="col-md-4">Номер охранного докум-та</label>
                             <div class="col-md-2">
                                 <div class="row">
-                                    <input type="text" class="form-control input-sm col-md-2">
+                                    <input type="text" class="form-control input-sm col-md-2" [(ngModel)]="cardEdit.secDocNum">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <h5 class="col-md-3">Дата выдачи</h5>
+                            <label class="col-md-3">Дата выдачи</label>
                             <div class="col-md-3">
                                 <div class="row">
-                                    <input type="date" class="form-control input-sm col-md-3">
+                                    <input type="date" class="form-control input-sm col-md-3" [(ngModel)]="cardEdit.deliveryDate">
                                 </div>
                             </div>
-                            <h5 class="col-md-4">Номер бюллетеня</h5>
+                            <label class="col-md-4">Номер бюллетеня</label>
                             <div class="col-md-2">
                                 <div class="row">
-                                    <input type="text" class="form-control input-sm col-md-2">
+                                    <input type="text" class="form-control input-sm col-md-2" [(ngModel)]="cardEdit.belNum">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <h5 class="col-md-3">Дата получения</h5>
+                            <label class="col-md-3">Дата получения</label>
                             <div class="col-md-3">
                                 <div class="row">
-                                    <input type="date" class="form-control input-sm col-md-3">
+                                    <input type="date" class="form-control input-sm col-md-3" [(ngModel)]="cardEdit.takeDate">
                                 </div>
                             </div>
-                            <h5 class="col-md-4">Внутренний номер заявки</h5>
+                            <label class="col-md-4">Внутренний номер заявки</label>
                             <div class="col-md-2">
                                 <div class="row">
-                                    <input type="number" class="form-control input-sm col-md-2">
+                                    <input type="number" class="form-control input-sm col-md-2" [(ngModel)]="cardEdit.innerNumZaiv">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <h5 class="col-md-3">Срок действия</h5>
+                            <label class="col-md-3">Срок действия</label>
                             <div class="col-md-3">
                                 <div class="row">
-                                    <input type="date" class="form-control input-sm col-md-3">
+                                    <input type="date" class="form-control input-sm col-md-3" [(ngModel)]="cardEdit.duration">
                                 </div>
                             </div>
-                            <h5 class="col-md-4">Номер внутреннего дела</h5>
+                            <label class="col-md-4">Номер внутреннего дела</label>
                             <div class="col-md-2">
                                 <div class="row">
-                                    <input type="text" class="form-control input-sm col-md-2">
+                                    <input type="text" class="form-control input-sm col-md-2" [(ngModel)]="cardEdit.innerDeloNum">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
+                            <label class="col-md-offset-6 col-md-4">Шифр МПК</label>
+                            <div class="col-md-2">
+                                <div class="row">
+                                    <input type="text" class="form-control input-sm col-md-2" [(ngModel)]="cardEdit.shifr">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row space">
+                            <div>
+                                <label for="hasContacts" class="col-md-4">Есть договоры?</label>
+                                <input type="checkbox" class="col-md-1" id="hasContacts" [(ngModel)]="cardEdit.hasContracts">
+                            </div>
+                            <div>
+                                <label for="hasBalance" class="col-md-offset-1 col-md-4">На балансе?</label>
+                                <input type="checkbox" class="col-md-2" id="hasBalance" [(ngModel)]="cardEdit.hasBalance">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div>
+                                <label for="conRND" class="col-md-4">Связан с НИР?</label>
+                                <input type="checkbox" class="col-md-1" id="conRND" [(ngModel)]="cardEdit.hasRND">
+                            </div>
+                            <div>
+                                <label for="datePost" class="col-md-offset-1 col-md-4">Дата постановки</label>
+                                <div class="col-md-2">
+                                    <div class="row">
+                                        <input type="date" class="form-control input-sm" id="datePost" [(ngModel)]="cardEdit.postan">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div>
+                                <label for="fond" class="col-md-4">В уставном фонде?</label>
+                                <input type="checkbox" class="col-md-1" id="fond" [(ngModel)]="cardEdit.hasFond">
+                            </div>
+                            <div>
+                                <label for="cost" class="col-md-offset-1 col-md-4">Балансовая стоимость</label>
+                                <div class="col-md-2">
+                                    <div class="row">
+                                        <input type="number" class="form-control input-sm" id="cost" [(ngModel)]="cardEdit.cost">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row space">
                             <div class="form-group no-padding-right col-md-6">
                                 <label for="noteBalance">Примечания по постановке на баланс</label>
-                                <textarea class="form-control" id="noteBalance" rows="5"></textarea>
+                                <textarea class="form-control" id="noteBalance" rows="3" [(ngModel)]="cardEdit.balanceNote"></textarea>
                             </div>
                             <div class="form-group no-padding-right col-md-6">
                                 <label for="noteRight">Примечения по передаче прав</label>
-                                <textarea class="form-control" id="noteRight" rows="5"></textarea>
+                                <textarea class="form-control" id="noteRight" rows="3" [(ngModel)]="cardEdit.rightNote"></textarea>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group no-padding-right col-md-6">
                                 <label for="contacts">Контактные сведенья</label>
-                                <textarea class="form-control" id="contacts" rows="5"></textarea>
+                                <textarea class="form-control" id="contacts" rows="3" [(ngModel)]="cardEdit.contactNote"></textarea>
                             </div>
                             <div class="form-group no-padding-right col-md-6">
                                 <label for="generalNotes">Общие примечания</label>
-                                <textarea class="form-control" id="generalNotes" rows="5"></textarea>
+                                <textarea class="form-control" id="generalNotes" rows="3" [(ngModel)]="cardEdit.generalNote"></textarea>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group col-md-12">
-                                <label for="authors">Авторы</label>
-                                <textarea class="form-control" id="authors" rows="3"></textarea>
+                            <div class="form-group col-md-12 no-padding-right">
+                                <label for="referat">Реферат</label>
+                                <textarea class="form-control" id="referat" rows="5" [(ngModel)]="cardEdit.referat"></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-5">
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="authors">Авторы</label>
+                                <textarea class="form-control" id="authors" rows="2" [(ngModel)]="cardEdit.authors"></textarea>
+                            </div>
+                        </div>
                         <div class="row margin-btn">
                             <label class="col-md-12">Авторы, внесённые в реестр сотрудников</label>
                             <div class="col-md-9 no-padding-right">
@@ -307,8 +357,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success">Сохранить данные</button>
-                <button type="button" class="btn btn-warning">Отменить изменения</button>
+                <button type="button" class="btn btn-success" (click)="save()">Сохранить данные</button>
+                <button type="button" class="btn btn-warning" (click)="cancel()">Отменить изменения</button>
                 <button type="button" class="btn btn-primary">Отчёт по карточке</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Выход</button>
             </div>

@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
+import {Http, RequestOptions, Headers} from '@angular/http';
+import {OicModal} from "../../components/card/oic-card/oicModal";
 
 @Injectable()
 export class CardService{
@@ -37,5 +38,17 @@ export class CardService{
     }
     getOicInActive(){
         return this.http.get(this.serverUrl + 'card/oic/inactive')
+    }
+    getCard(id:number){
+        return this.http.get(this.serverUrl + 'card/oic?id=' + id)
+    }
+    getTypes(){
+        return this.http.get(this.serverUrl + 'card/oic/types')
+    }
+    getOsnov(){
+        return this.http.get(this.serverUrl + 'card/oic/osnov')
+    }
+    updateOic(oicModal:OicModal){
+        return this.http.post(this.serverUrl + 'card/oic',oicModal)
     }
 }

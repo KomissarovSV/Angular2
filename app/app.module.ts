@@ -7,11 +7,13 @@ import { HttpModule } from '@angular/http'
 import {CommonTable} from "./components/card/common-table/common-table.component";
 import {DepartmentTable} from "./components/card/department-table/department-table.component";
 import {OicCard} from "./components/card/oic-card/oic-card.component";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
     imports:[
         BrowserModule,
+        FormsModule,
         HttpModule,
         RouterModule.forRoot([
 

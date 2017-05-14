@@ -21,17 +21,21 @@
             </div>
             <div class="tab-pane fade" id="apply">данные2</div>
         </div>
+        <br/>
+        <br/>
+        <button class="btn btn-info btn-block">Добавить запись</button>
     </div>
     <div class="col-md-10">
         <div class="tab-content">
             <div class="tab-pane fade in active" id="common">
-                <common-table [oicList]="oicList"></common-table>
+                <common-table [oicList]="oicList" (onChanged)="idChange($event)"></common-table>
             </div>
             <div class="tab-pane fade" id="department">
-                <department-table [oicList]="oicList"></department-table>
+                <department-table [oicList]="oicList" (onChanged)="idChange($event)"></department-table>
             </div>
         </div>
     </div>
+    <oic-card [id]="curId"></oic-card>
 </div>
 
 

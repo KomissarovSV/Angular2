@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core'
+import {Component, Input, EventEmitter,Output} from '@angular/core'
 import {CardService} from "../../../services/card/card.service";
 import {Oic} from "../oic";
 
@@ -12,4 +12,10 @@ export class DepartmentTable{
 
     @Input()
     oicList:Oic[];
+    @Output()
+    onChanged = new EventEmitter<Number>();
+
+    rowClick(id:number){
+        this.onChanged.emit(id);
+    }
 }

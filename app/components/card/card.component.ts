@@ -14,7 +14,13 @@ export class Card implements  OnInit{
     oicList:Oic[];
     applyList:Oic[];
 
+    curId:number = 1;
+
     constructor(private cardService: CardService){}
+
+    idChange(id:number){
+        this.curId = id;
+    }
 
     ngOnInit(){
         this.clickAllOic()

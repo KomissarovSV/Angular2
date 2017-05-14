@@ -14,6 +14,7 @@ var http_1 = require("@angular/http");
 var common_table_component_1 = require("./components/card/common-table/common-table.component");
 var department_table_component_1 = require("./components/card/department-table/department-table.component");
 var oic_card_component_1 = require("./components/card/oic-card/oic-card.component");
+var forms_1 = require("@angular/forms");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23,6 +24,7 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [
             platform_browser_1.BrowserModule,
+            forms_1.FormsModule,
             http_1.HttpModule,
             router_1.RouterModule.forRoot([])
         ],
