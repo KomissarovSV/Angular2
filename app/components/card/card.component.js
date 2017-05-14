@@ -13,7 +13,6 @@ var card_service_1 = require("../../services/card/card.service");
 var Card = (function () {
     function Card(cardService) {
         this.cardService = cardService;
-        this.curId = 1;
     }
     Card.prototype.idChange = function (id) {
         this.curId = id;

@@ -14,7 +14,7 @@ export class Card implements  OnInit{
     oicList:Oic[];
     applyList:Oic[];
 
-    curId:number = 1;
+    curId:number;
 
     constructor(private cardService: CardService){}
 

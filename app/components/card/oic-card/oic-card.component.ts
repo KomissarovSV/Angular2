@@ -18,18 +18,22 @@ export class OicCard implements OnChanges {
     id: number;
     cardEdit: OicModal = new OicModal();
     cardCur: OicModal = new OicModal();
-    oicTypes:OicType[];
-    typesOsnov:OicOsnov[];
+    oicTypes: OicType[];
+    typesOsnov: OicOsnov[];
 
     constructor(private cardService: CardService) {
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        this.cardService.getCard(this.id).subscribe((data: Response) => {
+        if (this.id) {
+            this.cardService.getCard(this.id).subscribe((data: Response) => {
                 this.cardEdit = data.json();
                 this.cardCur = data.json();
-            }
-        );
+            });
+        } else {
+            this.cardEdit = new OicModal();
+            this.cardCur = new OicModal();
+        }
         this.cardService.getTypes().subscribe((data: Response) => {
                 this.oicTypes = data.json();
             }
@@ -40,14 +44,17 @@ export class OicCard implements OnChanges {
         );
     }
 
-    save(){
-        this.cardService.updateOic(this.cardEdit).subscribe(() => {
-                this.cardCur = Object.assign({}, this.cardEdit);
-            }
-        );
-    }
+    save() {
+        if (this.id){
+            this.cardService.updateOic(this.cardEdit).subscribe(() => {
+                    this.cardCur = Object.assign({}, this.cardEdit);
+                }
+            );
+        }else {
 
-    cancel(){
+        }
+    }
+    cancel() {
         this.cardEdit = Object.assign({}, this.cardCur);
     }
 
