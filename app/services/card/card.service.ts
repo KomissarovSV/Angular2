@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
-import {Http, RequestOptions, Headers} from '@angular/http';
-import {OicModal} from "../../components/card/oic-card/oicModal";
+import {Http} from '@angular/http';
+import {OicModal} from "../../components/oic-card/oicModal";
 
 @Injectable()
 export class CardService{
 
-    serverUrl:string = 'http://localhost:8080/';
+    serverUrl:string = 'http://localhost:8080/api/';
 
     constructor(private http: Http){ }
 
@@ -49,6 +49,13 @@ export class CardService{
         return this.http.get(this.serverUrl + 'card/oic/osnov')
     }
     updateOic(oicModal:OicModal){
+        return this.http.put(this.serverUrl + 'card/oic',oicModal)
+    }
+    createOic(oicModal:OicModal){
         return this.http.post(this.serverUrl + 'card/oic',oicModal)
     }
+    getTree(){
+        return this.http.get(this.serverUrl + 'card/oic/tree')
+    }
+
 }

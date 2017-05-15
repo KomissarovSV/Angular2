@@ -11,7 +11,7 @@
                     <div class="col-md-7">
                         <div class="form-inline form-group">
                             <label for="num">Внутренний номер:</label>
-                            <input type="text" class="form-control" id="num" [disabled]="cardCur.number"[(ngModel)]="cardEdit.number">
+                            <input type="text" class="form-control" id="num" disabled [(ngModel)]="cardEdit.number">
                         </div>
                         <div>
                             <label for="current">Действующий</label>
@@ -198,7 +198,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <button class="btn btn-primary">Изменить</button>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#authorsModal" data-dismiss="modal">Изменить</button>
                             </div>
                         </div>
                         <div class="row margin-btn">
@@ -365,3 +365,4 @@
         </div>
     </div>
 </div>
+<authors-modal [(oic)]="cardEdit"></authors-modal>

@@ -11,10 +11,11 @@ var app_component_1 = require("./app.component");
 var router_1 = require("@angular/router");
 var card_component_1 = require("./components/card/card.component");
 var http_1 = require("@angular/http");
-var common_table_component_1 = require("./components/card/common-table/common-table.component");
-var department_table_component_1 = require("./components/card/department-table/department-table.component");
-var oic_card_component_1 = require("./components/card/oic-card/oic-card.component");
+var common_table_component_1 = require("./components/common-table/common-table.component");
+var department_table_component_1 = require("./components/department-table/department-table.component");
+var oic_card_component_1 = require("./components/oic-card/oic-card.component");
 var forms_1 = require("@angular/forms");
+var authors_modal_component_1 = require("./components/authors-modal/authors-modal.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,7 +29,7 @@ AppModule = __decorate([
             http_1.HttpModule,
             router_1.RouterModule.forRoot([])
         ],
-        declarations: [app_component_1.AppComponent, card_component_1.Card, common_table_component_1.CommonTable, department_table_component_1.DepartmentTable, oic_card_component_1.OicCard],
+        declarations: [app_component_1.AppComponent, card_component_1.Card, common_table_component_1.CommonTable, department_table_component_1.DepartmentTable, oic_card_component_1.OicCard, authors_modal_component_1.AuthorsModal],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

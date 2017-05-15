@@ -1,6 +1,6 @@
 import {Component, Input, EventEmitter,Output} from '@angular/core'
-import {CardService} from "../../../services/card/card.service";
-import {Oic} from "../oic";
+import {CardService} from "../../services/card/card.service";
+import {Oic} from "../card/oic";
 
 @Component({
     moduleId:module.id,

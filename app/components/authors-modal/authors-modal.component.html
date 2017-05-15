@@ -1,0 +1,97 @@
+<div class="modal fade" id="authorsModal" tabindex="-1" role="dialog" aria-labelledby="authorsLabel">
+    <div class="modal-dialog modal-lg large" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="authorsLabel">Ссылки на авторов</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div>
+                        <div>
+                            <label class="col-md-3">Внутренний номер карточки:</label>
+                            <div class="col-md-2">
+                                <div class="row">
+                                    <input type="text" class="input-sm form-control" disabled [ngModel]="oic.number">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="col-md-offset-2 col-md-1">Тип ОИС</label>
+                            <div class="col-md-1">
+                                <div class="row">
+                                    <input type="text" class="input-sm form-control" disabled [ngModel]="oic.typeOic">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 no-padding-right">
+                            <div class="form-group">
+                                <label for="oicName">Наименование ОИС/Заявки</label>
+                                <textarea class="form-control" id="oicName" rows="3" disabled [ngModel]="oic.name"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label for="authors">Авторы</label>
+                                <textarea class="form-control" id="authors" rows="3" disabled [ngModel]="oic.authors"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col-md-7">
+                            <label>Добавление ссылок</label>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">Поиск по ФИО</div>
+                                        <div class="panel-body">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control">
+                                                <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">Искать</button>
+                                    </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">Прямой выбор</div>
+                                        <div class="panel-body">
+                                            <button class="btn btn-default" (click)="drawTree()">Весь список</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 no-padding-right">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">Поиск по подразделению</div>
+                                        <div class="panel-body">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control">
+                                                <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button">Искать</button>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <label>Удаление ссылок</label>
+                        </div>
+                        <div class="col-md-7 no-padding-right">
+                            <div #tree></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal"
+                        data-target="#oicModal">Назад
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

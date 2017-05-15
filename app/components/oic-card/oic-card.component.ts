@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core'
-import {CardService} from "../../../services/card/card.service";
+import {CardService} from "../../services/card/card.service";
 import {Response} from "@angular/http";
 import {OicModal} from "./oicModal";
 import {OicType} from "./oicType";
@@ -36,12 +36,10 @@ export class OicCard implements OnChanges {
         }
         this.cardService.getTypes().subscribe((data: Response) => {
                 this.oicTypes = data.json();
-            }
-        );
+        });
         this.cardService.getOsnov().subscribe((data: Response) => {
                 this.typesOsnov = data.json();
-            }
-        );
+        });
     }
 
     save() {
@@ -51,7 +49,10 @@ export class OicCard implements OnChanges {
                 }
             );
         }else {
-
+            this.cardService.createOic(this.cardEdit).subscribe(() => {
+                    this.cardCur = Object.assign({}, this.cardEdit);
+                }
+            );
         }
     }
     cancel() {
