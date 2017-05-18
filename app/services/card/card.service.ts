@@ -57,5 +57,8 @@ export class CardService{
     getTree(){
         return this.http.get(this.serverUrl + 'card/oic/tree')
     }
+    getNodes(parentId:number){
+        return this.http.get(this.serverUrl + 'card/oic/nodes?id=' + parentId)
+    }
 
 }

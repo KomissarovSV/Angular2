@@ -63,6 +63,9 @@ var CardService = (function () {
     CardService.prototype.getTree = function () {
         return this.http.get(this.serverUrl + 'card/oic/tree');
     };
+    CardService.prototype.getNodes = function (parentId) {
+        return this.http.get(this.serverUrl + 'card/oic/nodes?id=' + parentId);
+    };
     return CardService;
 }());
 CardService = __decorate([

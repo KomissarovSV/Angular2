@@ -16,6 +16,7 @@ var department_table_component_1 = require("./components/department-table/depart
 var oic_card_component_1 = require("./components/oic-card/oic-card.component");
 var forms_1 = require("@angular/forms");
 var authors_modal_component_1 = require("./components/authors-modal/authors-modal.component");
+var lazy_tree_component_1 = require("./components/lazy-tree/lazy-tree.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -29,7 +30,7 @@ AppModule = __decorate([
             http_1.HttpModule,
             router_1.RouterModule.forRoot([])
         ],
-        declarations: [app_component_1.AppComponent, card_component_1.Card, common_table_component_1.CommonTable, department_table_component_1.DepartmentTable, oic_card_component_1.OicCard, authors_modal_component_1.AuthorsModal],
+        declarations: [app_component_1.AppComponent, card_component_1.Card, common_table_component_1.CommonTable, department_table_component_1.DepartmentTable, oic_card_component_1.OicCard, authors_modal_component_1.AuthorsModal, lazy_tree_component_1.LazyTree],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

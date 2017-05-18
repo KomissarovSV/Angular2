@@ -9,6 +9,7 @@ import {DepartmentTable} from "./components/department-table/department-table.co
 import {OicCard} from "./components/oic-card/oic-card.component";
 import {FormsModule} from "@angular/forms";
 import {AuthorsModal} from "./components/authors-modal/authors-modal.component";
+import {LazyTree} from "./components/lazy-tree/lazy-tree.component";
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import {AuthorsModal} from "./components/authors-modal/authors-modal.component";
         RouterModule.forRoot([
 
         ])],
-    declarations:[AppComponent,Card,CommonTable,DepartmentTable,OicCard,AuthorsModal],
+    declarations:[AppComponent,Card,CommonTable,DepartmentTable,OicCard,AuthorsModal,LazyTree],
     bootstrap:[AppComponent]
 })
 export class AppModule{

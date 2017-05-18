@@ -1,7 +1,7 @@
-import {Component, Input, ViewChild, ElementRef, OnInit} from '@angular/core'
+import {Component, Input, ViewChild} from '@angular/core'
 import {CardService} from "../../services/card/card.service";
 import {OicModal} from "../oic-card/oicModal";
-import {Response} from "@angular/http";
+import {LazyTree} from "../lazy-tree/lazy-tree.component";
 
 @Component({
     moduleId: module.id,
@@ -10,26 +10,17 @@ import {Response} from "@angular/http";
     styleUrls: ['authors-modal.component.css'],
     providers: [CardService]
 })
-export class AuthorsModal implements OnInit{
+export class AuthorsModal{
 
     @Input()
     oic:OicModal = new OicModal();
 
-    @ViewChild("tree")
-    tree:ElementRef;
-    list:any[];
+    @ViewChild(LazyTree)
+    lazyTree:LazyTree;
 
-    constructor(private cardService: CardService) {
-    }
+    searchText:string;
 
-    ngOnInit(){
-        this.cardService.getTree().subscribe((data: Response) => {
-                this.list = data.json();
-                $(this.tree.nativeElement).treeview({data: this.list});
-        });
-    }
-
-    drawTree(){
-
+    search(){
+        this.lazyTree.search(this.searchText);
     }
 }
