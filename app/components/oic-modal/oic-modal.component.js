@@ -11,13 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var card_service_1 = require("../../services/card/card.service");
 var oicModal_1 = require("./classes/oicModal");
-var OicCard = (function () {
-    function OicCard(cardService) {
+var OicModalComponent = (function () {
+    function OicModalComponent(cardService) {
         this.cardService = cardService;
         this.cardEdit = new oicModal_1.OicModal();
         this.cardCur = new oicModal_1.OicModal();
     }
-    OicCard.prototype.ngOnChanges = function (changes) {
+    OicModalComponent.prototype.ngOnChanges = function (changes) {
         var _this = this;
         if (this.id) {
             this.cardService.getCard(this.id).subscribe(function (data) {
@@ -36,7 +36,7 @@ var OicCard = (function () {
             _this.typesOsnov = data.json();
         });
     };
-    OicCard.prototype.save = function () {
+    OicModalComponent.prototype.save = function () {
         var _this = this;
         if (this.id) {
             this.cardService.updateOic(this.cardEdit).subscribe(function () {
@@ -49,24 +49,24 @@ var OicCard = (function () {
             });
         }
     };
-    OicCard.prototype.cancel = function () {
+    OicModalComponent.prototype.cancel = function () {
         this.cardEdit = Object.assign({}, this.cardCur);
     };
-    return OicCard;
+    return OicModalComponent;
 }());
 __decorate([
     core_1.Input(),
     __metadata("design:type", Number)
-], OicCard.prototype, "id", void 0);
-OicCard = __decorate([
+], OicModalComponent.prototype, "id", void 0);
+OicModalComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'oic-card',
-        templateUrl: 'oic-card.component.html',
-        styleUrls: ['oic-card.component.css'],
+        selector: 'oic-modal',
+        templateUrl: 'oic-modal.component.html',
+        styleUrls: ['oic-modal.component.css'],
         providers: [card_service_1.CardService]
     }),
     __metadata("design:paramtypes", [card_service_1.CardService])
-], OicCard);
-exports.OicCard = OicCard;
-//# sourceMappingURL=oic-card.component.js.map
+], OicModalComponent);
+exports.OicModalComponent = OicModalComponent;
+//# sourceMappingURL=oic-modal.component.js.map

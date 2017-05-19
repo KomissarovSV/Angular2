@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
-import {OicModal} from "../../components/oic-card/classes/oicModal";
+import {OicModal} from "../../components/oic-modal/classes/oicModal";
 
 @Injectable()
 export class CardService{
@@ -59,6 +59,12 @@ export class CardService{
     }
     getNodes(parentId:number){
         return this.http.get(this.serverUrl + 'card/oic/nodes?id=' + parentId)
+    }
+    addGrnti(oicId:number,grntiId:number){
+        return this.http.post(this.serverUrl + 'card/oic/grnti?oicId=' + oicId +'&grntiId=' +grntiId,null);
+    }
+    deleteGrnti(oicId:number,grntiId:number){
+        return this.http.put(this.serverUrl + 'card/oic/grnti?oicId=' + oicId +'&grntiId=' +grntiId,null);
     }
 
 }

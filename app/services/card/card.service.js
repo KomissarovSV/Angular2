@@ -66,6 +66,12 @@ var CardService = (function () {
     CardService.prototype.getNodes = function (parentId) {
         return this.http.get(this.serverUrl + 'card/oic/nodes?id=' + parentId);
     };
+    CardService.prototype.addGrnti = function (oicId, grntiId) {
+        return this.http.post(this.serverUrl + 'card/oic/grnti?oicId=' + oicId + '&grntiId=' + grntiId, null);
+    };
+    CardService.prototype.deleteGrnti = function (oicId, grntiId) {
+        return this.http.put(this.serverUrl + 'card/oic/grnti?oicId=' + oicId + '&grntiId=' + grntiId, null);
+    };
     return CardService;
 }());
 CardService = __decorate([

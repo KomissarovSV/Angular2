@@ -96,7 +96,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let grnti of oic.grntiList">
+                                        <tr *ngFor="let grnti of oic.grntiList" (dblclick)="delete(grnti)">
                                             <td>{{grnti.shifr}}</td>
                                             <td>{{grnti.name}}</td>
                                         </tr>

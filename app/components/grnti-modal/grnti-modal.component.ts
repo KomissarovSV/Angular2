@@ -3,7 +3,7 @@ import {CardService} from "../../services/card/card.service";
 import {LazyTree} from "../lazy-tree/lazy-tree.component";
 import {Node} from "../lazy-tree/classes/Node";
 import {GRNTI} from "../lazy-tree/classes/GRNTI";
-import {OicModal} from "../oic-card/classes/oicModal";
+import {OicModal} from "../oic-modal/classes/oicModal";
 declare var $:JQueryStatic;
 
 @Component({
@@ -14,6 +14,8 @@ declare var $:JQueryStatic;
     providers: [CardService]
 })
 export class GrntiModal{
+
+    constructor(private cardService:CardService){}
 
     @Input()
     oic:OicModal = new OicModal;
@@ -31,6 +33,19 @@ export class GrntiModal{
     }
 
     addGrnti(node:Node){
-        // this.oic.grntiList.push(node.grnti-modal);
+        let oic = this.oic;
+        this.cardService.addGrnti(this.oic.number,node.grnti.id).subscribe(() => {
+                oic.grntiList.push(node.grnti);
+            }
+        );
+    }
+
+    delete(grnti:GRNTI){
+        let oic = this.oic;
+        this.cardService.deleteGrnti(this.oic.number,grnti.id).subscribe(() => {
+                let index = oic.grntiList.indexOf(grnti,0);
+            oic.grntiList.splice(index,1)
+            }
+        );
     }
 }

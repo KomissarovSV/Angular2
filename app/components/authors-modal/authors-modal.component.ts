@@ -1,6 +1,6 @@
-import {Component, Input, ViewChild} from '@angular/core'
+import {Component, Input} from '@angular/core'
 import {CardService} from "../../services/card/card.service";
-import {OicModal} from "../oic-card/classes/oicModal";
+import {OicModal} from "../oic-modal/classes/oicModal";
 
 @Component({
     moduleId: module.id,

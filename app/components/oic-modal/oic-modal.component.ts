@@ -7,12 +7,12 @@ import {OicOsnov} from "./classes/oicOsnov";
 
 @Component({
     moduleId: module.id,
-    selector: 'oic-card',
-    templateUrl: 'oic-card.component.html',
-    styleUrls: ['oic-card.component.css'],
+    selector: 'oic-modal',
+    templateUrl: 'oic-modal.component.html',
+    styleUrls: ['oic-modal.component.css'],
     providers: [CardService]
 })
-export class OicCard implements OnChanges {
+export class OicModalComponent implements OnChanges {
 
     @Input()
     id: number;
