@@ -1,3 +1,4 @@
+import {GRNTI} from "../../lazy-tree/classes/GRNTI";
 export class OicModal {
     number:number;
     name:string;
@@ -31,4 +32,6 @@ export class OicModal {
     referat:string;
 
     authors:string;
+
+    grntiList:GRNTI[];
 }

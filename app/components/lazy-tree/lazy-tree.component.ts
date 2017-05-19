@@ -1,8 +1,8 @@
-import {Component, ViewChild, ElementRef, OnInit} from '@angular/core'
+import {Component, ViewChild, ElementRef, OnInit, Output, EventEmitter} from '@angular/core'
 import {CardService} from "../../services/card/card.service";
 import {Response} from "@angular/http";
-import {Tree} from "./Tree";
-import {Node} from "./Node";
+import {Tree} from "./classes/Tree";
+import {Node} from "./classes/Node";
 declare var $:any;
 
 @Component({
@@ -17,6 +17,8 @@ export class LazyTree implements OnInit{
     @ViewChild("tree")
     treeElement:ElementRef;
     tree:Tree;
+    @Output()
+    onChanged = new EventEmitter<Node>();
 
     constructor(private cardService: CardService) {
     }
@@ -30,6 +32,13 @@ export class LazyTree implements OnInit{
                     .subscribe((data: Response) => callback(data.json()));
             };
             $(this.treeElement.nativeElement).treeview(this.tree);
+        });
+        let treeElement = this.treeElement.nativeElement;
+        let onChanged = this.onChanged;
+        $(this.treeElement.nativeElement).on('dblclick', function(event:any) {
+            let text = event.target.textContent;
+            let node:Node = $(treeElement).treeview('findNodes', [text,'text'])[0];
+            onChanged.emit(node);
         });
     }
 

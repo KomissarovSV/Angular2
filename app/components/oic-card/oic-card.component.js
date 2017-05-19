@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var card_service_1 = require("../../services/card/card.service");
-var oicModal_1 = require("./oicModal");
+var oicModal_1 = require("./classes/oicModal");
 var OicCard = (function () {
     function OicCard(cardService) {
         this.cardService = cardService;

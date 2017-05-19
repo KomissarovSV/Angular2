@@ -1,7 +1,6 @@
 import {Component, Input, ViewChild} from '@angular/core'
 import {CardService} from "../../services/card/card.service";
-import {OicModal} from "../oic-card/oicModal";
-import {LazyTree} from "../lazy-tree/lazy-tree.component";
+import {OicModal} from "../oic-card/classes/oicModal";
 
 @Component({
     moduleId: module.id,
@@ -14,13 +13,4 @@ export class AuthorsModal{
 
     @Input()
     oic:OicModal = new OicModal();
-
-    @ViewChild(LazyTree)
-    lazyTree:LazyTree;
-
-    searchText:string;
-
-    search(){
-        this.lazyTree.search(this.searchText);
-    }
 }

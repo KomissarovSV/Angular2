@@ -180,7 +180,7 @@
                         <div class="row margin-btn">
                             <label class="col-md-12">Авторы, внесённые в реестр сотрудников</label>
                             <div class="col-md-9 no-padding-right">
-                                <div class="table-fixed border">
+                                <div class="table-fixed">
                                     <table class="table table-hover table-condensed">
                                         <thead>
                                         <tr>
@@ -204,7 +204,7 @@
                         <div class="row margin-btn">
                             <label class="col-md-12">Подразделения</label>
                             <div class="col-md-9 no-padding-right">
-                                <div class="table-fixed border">
+                                <div class="table-fixed">
                                     <table class="table table-hover table-condensed">
                                         <thead>
                                         <tr>
@@ -236,7 +236,7 @@
                         <div class="row margin-btn">
                             <label class="col-md-12">Ссылки на договоры</label>
                             <div class="col-md-9 no-padding-right">
-                                <div class="table-fixed border">
+                                <div class="table-fixed">
                                     <table class="table table-hover table-condensed">
                                         <thead>
                                         <tr>
@@ -268,7 +268,7 @@
                         <div class="row margin-btn">
                             <label class="col-md-12">Ссылки на НИР</label>
                             <div class="col-md-9 no-padding-right">
-                                <div class="table-fixed border">
+                                <div class="table-fixed">
                                     <table class="table table-hover table-condensed">
                                         <thead>
                                         <tr>
@@ -300,7 +300,7 @@
                         <div class="row margin-btn">
                             <label class="col-md-12">Ссылки на ГРАНТИ</label>
                             <div class="col-md-9 no-padding-right">
-                                <div class="table-fixed border">
+                                <div class="table-fixed">
                                     <table class="table table-hover table-condensed">
                                         <thead>
                                         <tr>
@@ -309,30 +309,22 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td>ГРАНТИ 1</td>
-                                            <td>АБС</td>
-                                        </tr>
-                                        <tr>
-                                            <td>ГРАНТИ 2</td>
-                                            <td>АБС</td>
-                                        </tr>
-                                        <tr>
-                                            <td>ГРАНТИ 3</td>
-                                            <td>АБС</td>
-                                        </tr>
+                                            <tr *ngFor="let grnti of cardEdit.grntiList">
+                                                <td>{{grnti.name}}</td>
+                                                <td>{{grnti.shifr}}</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <button class="btn btn-primary">Изменить</button>
+                                <button class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#grntiModal">Изменить</button>
                             </div>
                         </div>
                         <div class="row margin-btn">
                             <label class="col-md-12">Ссылки на ключевые слова</label>
                             <div class="col-md-9 no-padding-right">
-                                <div class="table-fixed border">
+                                <div class="table-fixed">
                                     <table class="table table-hover table-condensed">
                                         <thead>
                                         <tr>
@@ -366,3 +358,4 @@
     </div>
 </div>
 <authors-modal [(oic)]="cardEdit"></authors-modal>
+<grnti-modal [(oic)]="cardEdit"></grnti-modal>

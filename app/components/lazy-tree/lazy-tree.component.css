@@ -1,4 +1,10 @@
 .scrollable{
-    height: 500px !important;
+    height: 70% !important;
     overflow:scroll;
+    white-space: nowrap;
+    border: 1px ridge;
+}
+ul{
+    display: inline-block;
+    float: none;
 }

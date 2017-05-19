@@ -47,9 +47,9 @@
                                         <div class="panel-heading">Поиск по ФИО</div>
                                         <div class="panel-body">
                                             <div class="input-group">
-                                                <input type="text" class="form-control" [(ngModel)]="searchText">
+                                                <input type="text" class="form-control">
                                                 <span class="input-group-btn">
-                                                    <button class="btn btn-default" type="button" (click)="search()">Искать</button>
+                                                    <button class="btn btn-default" type="button">Искать</button>
                                                 </span>
                                             </div>
                                         </div>
@@ -59,7 +59,7 @@
                                     <div class="panel panel-info">
                                         <div class="panel-heading">Прямой выбор</div>
                                         <div class="panel-body">
-                                            <button class="btn btn-default" (click)="drawTree()">Весь список</button>
+                                            <button class="btn btn-default">Весь список</button>
                                         </div>
                                     </div>
                                 </div>
@@ -82,7 +82,6 @@
                             <label>Удаление ссылок</label>
                         </div>
                         <div class="col-md-7 no-padding-right">
-                            <lazy-tree></lazy-tree>
                         </div>
                     </div>
                 </div>

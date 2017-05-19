@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core'
 import {Response} from "@angular/http";
 import {CardService} from "../../services/card/card.service";
-import {Oic} from "./oic";
+import {Oic} from "./classes/oic";
 
 @Component({
     moduleId:module.id,

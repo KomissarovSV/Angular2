@@ -1,0 +1,26 @@
+.large{
+    width: 90%;
+}
+
+.no-padding-right {
+    padding-right: 0 !important;
+}
+
+.table-fixed{
+    height: 90% !important;
+    overflow-y: scroll;
+    border: 1px ridge;
+}
+
+.margin-btn{
+    margin-bottom: 10px;
+}
+
+th{
+    font-size: smaller;
+    background-color: gainsboro;
+}
+
+.space{
+    margin-top: 20px;
+}

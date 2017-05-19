@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
-import {OicModal} from "../../components/oic-card/oicModal";
+import {OicModal} from "../../components/oic-card/classes/oicModal";
 
 @Injectable()
 export class CardService{

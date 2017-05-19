@@ -10,25 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var card_service_1 = require("../../services/card/card.service");
-var oicModal_1 = require("../oic-card/oicModal");
-var lazy_tree_component_1 = require("../lazy-tree/lazy-tree.component");
+var oicModal_1 = require("../oic-card/classes/oicModal");
 var AuthorsModal = (function () {
     function AuthorsModal() {
         this.oic = new oicModal_1.OicModal();
     }
-    AuthorsModal.prototype.search = function () {
-        this.lazyTree.search(this.searchText);
-    };
     return AuthorsModal;
 }());
 __decorate([
     core_1.Input(),
     __metadata("design:type", oicModal_1.OicModal)
 ], AuthorsModal.prototype, "oic", void 0);
-__decorate([
-    core_1.ViewChild(lazy_tree_component_1.LazyTree),
-    __metadata("design:type", lazy_tree_component_1.LazyTree)
-], AuthorsModal.prototype, "lazyTree", void 0);
 AuthorsModal = __decorate([
     core_1.Component({
         moduleId: module.id,

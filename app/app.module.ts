@@ -10,6 +10,7 @@ import {OicCard} from "./components/oic-card/oic-card.component";
 import {FormsModule} from "@angular/forms";
 import {AuthorsModal} from "./components/authors-modal/authors-modal.component";
 import {LazyTree} from "./components/lazy-tree/lazy-tree.component";
+import {GrntiModal} from "./components/grnti-modal/grnti-modal.component";
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import {LazyTree} from "./components/lazy-tree/lazy-tree.component";
         RouterModule.forRoot([
 
         ])],
-    declarations:[AppComponent,Card,CommonTable,DepartmentTable,OicCard,AuthorsModal,LazyTree],
+    declarations:[AppComponent,Card,CommonTable,DepartmentTable,OicCard,AuthorsModal,LazyTree,GrntiModal],
     bootstrap:[AppComponent]
 })
 export class AppModule{

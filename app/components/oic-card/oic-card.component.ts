@@ -1,9 +1,9 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core'
 import {CardService} from "../../services/card/card.service";
 import {Response} from "@angular/http";
-import {OicModal} from "./oicModal";
-import {OicType} from "./oicType";
-import {OicOsnov} from "./oicOsnov";
+import {OicModal} from "./classes/oicModal";
+import {OicType} from "./classes/oicType";
+import {OicOsnov} from "./classes/oicOsnov";
 
 @Component({
     moduleId: module.id,
